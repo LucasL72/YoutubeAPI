@@ -18,9 +18,29 @@
             <div class="card-body">
                 <h5 class="card-title">{{ this.title }}</h5>
                 <p class="card-text">{{ this.description}}</p>
-                <a href="{{this.link}}" class="btn btn-primary">Voir la vidéo</a>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#videoModal">Voir
+                    Vidéo</button>
             </div>
         </div>
+        <!-- Modal -->
+        <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="//www.youtube.com/embed/{{this.id}}" allowfullscreen="" frameborder="0" height="315" width="100%"></iframe>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
         {{/each}}
     </div>
 </div>
+
+<

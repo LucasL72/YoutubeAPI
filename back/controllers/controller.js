@@ -16,7 +16,7 @@ exports.youtubesearch = (req, res) => {
 
     var opts = {
         maxResults: 16,
-        key: 'Your Youtube Key'
+        key: 'Your youtube key'
     };
 
     search(`"${req.body.recherche}"`, opts, function (err, results) {
