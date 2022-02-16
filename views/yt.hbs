@@ -1,0 +1,26 @@
+<h2 class="text-center">Youtube</h2>
+<div class="container">
+
+    <form action="/yt" method="POST">
+        <div class="row">
+            <div class="col-md-6">
+                <input name="recherche" type="text" class="form-control" placeholder="Votre recherche">
+            </div>
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-primary">OK</button>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        {{#each data}}
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{ this.thumbnails.default.url }}" alt="">
+            <div class="card-body">
+                <h5 class="card-title">{{ this.title }}</h5>
+                <p class="card-text">{{ this.description}}</p>
+                <a href="{{this.link}}" class="btn btn-primary">Voir la vidéo</a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
